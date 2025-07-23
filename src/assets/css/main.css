@@ -1,2 +1,28 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@font-face {
+    font-family: "ScopeOne";
+    font-style: normal;
+    font-weight: 150;
+    font-display: swap;
+    src: url("../font/Scope_One/ScopeOne-Regular.ttf") format("woff2");
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../font/Comfortaa/Comfortaa-VariableFont_wght.ttf")
+        format("woff2");
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../font/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf")
+        format("woff2");
+}

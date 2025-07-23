@@ -30,9 +30,9 @@ const noticeCount = ref<number>(0);
                     tabindex="0"
                     class="menu menu-sm md:menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                 >
-                    <li><a>ホーム</a></li>
-                    <li><a>ニュース</a></li>
-                    <li><a>リンク</a></li>
+                    <li><nuxt-link to="/">ホーム</nuxt-link></li>
+                    <li><nuxt-link to="/">ニュース</nuxt-link></li>
+                    <li><nuxt-link to="/">リンク</nuxt-link></li>
                 </ul>
             </div>
         </div>

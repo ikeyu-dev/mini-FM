@@ -7,4 +7,9 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    runtimeConfig: {
+        public: {
+            All_PROGRAM_URL: process.env.All_PROGRAM_URL || "",
+        },
+    },
 });

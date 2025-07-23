@@ -34,11 +34,10 @@ if (data) {
             );
     }
 }
-console.log(data.value);
 </script>
 <template>
     <div
-        class="carousel carousel-vertical rounded-box w-full h-96"
+        class="carousel carousel-vertical carousel-center rounded-box w-full h-96"
         v-if="!error && data?.programs"
     >
         <div

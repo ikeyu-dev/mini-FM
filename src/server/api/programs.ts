@@ -11,7 +11,7 @@ export default defineEventHandler(async () => {
         await page.goto(config.public.All_PROGRAM_URL);
 
         const programs = await page.$$eval(".a3lLHc", (elements) => {
-            return elements.map((element) => {
+            const extractedPrograms = elements.map((element) => {
                 const titleElement = element.querySelector('[jsname="r4nke"]');
                 const linkElement = element.querySelector("a");
                 const imgElement = element.querySelector("img");
@@ -20,6 +20,13 @@ export default defineEventHandler(async () => {
                 const imgSrc = imgElement ? imgElement.src : null;
                 return { title, link, imgSrc };
             });
+            // Add an extra program with empty title, link, and imgSrc
+            extractedPrograms.push({
+                title: "none",
+                link: "none",
+                imgSrc: "none",
+            });
+            return extractedPrograms;
         });
         return {
             programs: programs,

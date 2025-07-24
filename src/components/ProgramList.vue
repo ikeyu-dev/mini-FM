@@ -18,6 +18,9 @@ if (data) {
                         title.match(/第(\d+)回/) ||
                         title.match(/第(\d+\.\d+)回/);
                     if (!match) {
+                        if (title === "none") {
+                            return 1000;
+                        }
                         return 0;
                     } else {
                         return parseFloat(match[1]);
@@ -34,6 +37,48 @@ if (data) {
             );
     }
 }
+const currentCarouselItem = ref(0);
+
+const moveToPreviousItem = () => {
+    const carousel = document.querySelector(".carousel");
+    if (
+        carousel &&
+        currentCarouselItem.value > 0 &&
+        currentCarouselItem.value - 1 >= 1
+    ) {
+        currentCarouselItem.value -= 1;
+        const previousItem = carousel.querySelector(
+            `.carousel-item[data-index="${currentCarouselItem.value}"]`
+        ) as HTMLElement;
+        if (previousItem) {
+            previousItem.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+        }
+    }
+    console.log(currentCarouselItem.value);
+};
+
+const moveToNextItem = () => {
+    const carousel = document.querySelector(".carousel");
+    if (carousel) {
+        const items = carousel.querySelectorAll(".carousel-item");
+        if (currentCarouselItem.value < items.length - 1) {
+            currentCarouselItem.value += 1;
+            const nextItem = carousel.querySelector(
+                `.carousel-item[data-index="${currentCarouselItem.value}"]`
+            ) as HTMLElement;
+            if (nextItem) {
+                nextItem.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
+        }
+    }
+    console.log(currentCarouselItem.value);
+};
 
 const md_show = ref(true);
 
@@ -41,27 +86,35 @@ const updateVisibility = () => {
     md_show.value = window.innerWidth >= 768;
 };
 
-onMounted(() => {
+onMounted(async () => {
     window.addEventListener("resize", updateVisibility);
     updateVisibility();
+    await nextTick();
+    moveToNextItem();
 });
 
 onUnmounted(() => {
     window.removeEventListener("resize", updateVisibility);
+    updateVisibility();
 });
 </script>
 
 <template>
-    <section v-if="md_show">
-        <div class="grid grid-cols-3">
+    <section
+        class="px-10 pe-10 m-5"
+        v-if="md_show"
+    >
+        <div
+            class="card-title card-body flex justify-center items-center text-3xl font-bold section-title"
+        >
+            番組一覧
+        </div>
+        <div
+            class="grid grid-cols-3 inset-shadow-sm/10 rounded-2xl shadow-lg p-2"
+        >
             <div class="col-span-1 col-start-1">
-                <div
-                    class="flex flex-col justify-center items-center h-96 mt-10"
-                >
-                    <div
-                        class=""
-                        @click=""
-                    >
+                <div class="flex flex-col justify-center items-center h-96">
+                    <div @click="moveToPreviousItem">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"
@@ -76,17 +129,11 @@ onUnmounted(() => {
                         class="text-center my-10"
                         style="font-family: 'M PLUS Rounded 1c'"
                     >
-                        <h1 class="text-lg lg:text-xl font-bold mb-3">
-                            番組一覧
-                        </h1>
                         <p class="text-xs lg:text-sm text-gray-600">
                             過去の放送回を一覧でご覧いただけます。
                         </p>
                     </div>
-                    <div
-                        class=""
-                        @click=""
-                    >
+                    <div @click="moveToNextItem">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"
@@ -100,17 +147,19 @@ onUnmounted(() => {
                 </div>
             </div>
             <div
-                class="col-span-2 col-end-4 carousel carousel-vertical carousel-center rounded-box w-full h-96 mt-10"
+                class="col-span-2 col-end-4 carousel carousel-vertical carousel-center rounded-box w-full h-96"
                 v-if="!error && data?.programs"
+                style="overflow-y: hidden"
             >
                 <div
                     v-for="(program, index) in data.programs"
                     :key="index"
-                    class="carousel-item p-5"
+                    class="carousel-item p-5 h-52"
                     :data-index="index"
                 >
                     <div
                         class="grid grid-cols-3 gap-4 items-center bg-base-100 shadow-lg rounded-2xl w-full p-4"
+                        v-if="program.title !== 'none'"
                     >
                         <div class="col-span-1">
                             <img
@@ -125,9 +174,7 @@ onUnmounted(() => {
                             <p class="text-sm text-gray-600">
                                 再生ボタンを押すと別タブで再生ページに移動します
                             </p>
-                            <div
-                                class="flex items-center justify-end mr-7 lg:mr-10"
-                            >
+                            <div class="flex items-center justify-end mr-6">
                                 <nuxt-link
                                     target="_blank"
                                     :to="program.link ?? ''"
@@ -160,15 +207,34 @@ onUnmounted(() => {
             </p>
         </div>
         <div
+            @click="moveToPreviousItem"
+            class="flex justify-center items-center"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="h-12 w-12 cursor-pointer fill-blue-950 hover:fill-blue-700 transition-colors duration-300"
+            >
+                <path
+                    d="M342.6 81.4C330.1 68.9 309.8 68.9 297.3 81.4L137.3 241.4C124.8 253.9 124.8 274.2 137.3 286.7C149.8 299.2 170.1 299.2 182.6 286.7L288 181.3L288 552C288 569.7 302.3 584 320 584C337.7 584 352 569.7 352 552L352 181.3L457.4 286.7C469.9 299.2 490.2 299.2 502.7 286.7C515.2 274.2 515.2 253.9 502.7 241.4L342.7 81.4z"
+                />
+            </svg>
+        </div>
+        <div
             class="carousel carousel-vertical rounded-box h-96"
             v-if="!error && data?.programs"
+            style="overflow-y: hidden"
         >
             <div
                 v-for="(program, index) in data.programs"
                 :key="index"
                 class="carousel-item card bg-base-100 h-96"
+                :data-index="index"
             >
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-3 gap-4"
+                    v-if="program.title !== 'none'"
+                >
                     <figure>
                         <img
                             :src="program.imgSrc ?? ''"
@@ -204,6 +270,20 @@ onUnmounted(() => {
                     </div>
                 </div>
             </div>
+        </div>
+        <div
+            @click="moveToNextItem"
+            class="flex justify-center items-center"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="h-12 w-12 cursor-pointer fill-blue-950 hover:fill-blue-700 transition-colors duration-300"
+            >
+                <path
+                    d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"
+                />
+            </svg>
         </div>
     </section>
 </template>

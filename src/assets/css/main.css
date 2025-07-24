@@ -26,3 +26,8 @@
     src: url("../font/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf")
         format("woff2");
 }
+
+.section-title {
+    font-family: "M PLUS Rounded 1c";
+    color: rgb(32, 32, 32);
+}

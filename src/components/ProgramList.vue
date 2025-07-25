@@ -92,18 +92,20 @@ onMounted(async () => {
     await nextTick();
     moveToNextItem();
 
-    // carouselがスクロールされた時にcurrentCarouselItemを更新
-    const carousel = document.querySelector(".carousel");
-    if (carousel) {
-        carousel.addEventListener("scroll", () => {
-            const items = carousel.querySelectorAll(".carousel-item");
-            items.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                    currentCarouselItem.value = index;
-                }
+    // モバイル表示の時、carouselがスクロールされた時にcurrentCarouselItemを更新
+    if (md_show) {
+        const carousel = document.querySelector(".carousel");
+        if (carousel) {
+            carousel.addEventListener("scroll", () => {
+                const items = carousel.querySelectorAll(".carousel-item");
+                items.forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        currentCarouselItem.value = index;
+                    }
+                });
             });
-        });
+        }
     }
 });
 

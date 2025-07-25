@@ -80,7 +80,7 @@ const moveToNextItem = () => {
     console.log(currentCarouselItem.value);
 };
 
-const md_show = ref(true);
+const md_show = ref<boolean>(true);
 
 const updateVisibility = () => {
     md_show.value = window.innerWidth >= 768;
@@ -93,7 +93,8 @@ onMounted(async () => {
     moveToNextItem();
 
     // モバイル表示の時、carouselがスクロールされた時にcurrentCarouselItemを更新
-    if (md_show) {
+    // TODO: md_showが動的に変わる場合の処理
+    if (md_show.value === false) {
         const carousel = document.querySelector(".carousel");
         if (carousel) {
             carousel.addEventListener("scroll", () => {

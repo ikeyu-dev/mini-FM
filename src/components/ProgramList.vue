@@ -100,7 +100,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <!-- 初回表示時にゆっくり現れる感じ -->
     <section
         class="px-10 pe-10 m-5"
         v-if="md_show"

@@ -229,7 +229,7 @@ onUnmounted(() => {
             <div
                 v-for="(program, index) in data.programs"
                 :key="index"
-                class="carousel-item card bg-base-100 h-96"
+                class="flex justify-center items-center carousel-item card bg-base-100 h-96"
                 :data-index="index"
             >
                 <div

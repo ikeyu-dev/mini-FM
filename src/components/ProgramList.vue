@@ -91,6 +91,20 @@ onMounted(async () => {
     updateVisibility();
     await nextTick();
     moveToNextItem();
+
+    // carouselがスクロールされた時にcurrentCarouselItemを更新
+    const carousel = document.querySelector(".carousel");
+    if (carousel) {
+        carousel.addEventListener("scroll", () => {
+            const items = carousel.querySelectorAll(".carousel-item");
+            items.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    currentCarouselItem.value = index;
+                }
+            });
+        });
+    }
 });
 
 onUnmounted(() => {
@@ -223,7 +237,6 @@ onUnmounted(() => {
         <div
             class="carousel carousel-vertical rounded-box h-96"
             v-if="!error && data?.programs"
-            style="overflow-y: hidden"
         >
             <div
                 v-for="(program, index) in data.programs"
@@ -232,7 +245,7 @@ onUnmounted(() => {
                 :data-index="index"
             >
                 <div
-                    class="grid grid-cols-1 lg:grid-cols-3 gap-4"
+                    class="grid grid-cols-1 lg:grid-cols-3"
                     v-if="program.title !== 'none'"
                 >
                     <figure>
@@ -268,6 +281,12 @@ onUnmounted(() => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div
+                    v-else
+                    class="text-center text-gray-500"
+                >
+                    表示内容は最新です．
                 </div>
             </div>
         </div>

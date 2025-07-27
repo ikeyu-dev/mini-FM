@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Programs } from "~/types/programs";
-import { useProgramStore } from "~/composables/programStore";
 
 // const programStore = useProgramStore();
 

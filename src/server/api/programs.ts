@@ -17,14 +17,13 @@ export default defineEventHandler(async () => {
                 const imgElement = element.querySelector("img");
                 const title = titleElement ? titleElement.textContent : null;
                 const link = linkElement ? linkElement.href : null;
-                const imgSrc = imgElement ? imgElement.src : null;
-                return { title, link, imgSrc };
+                // const imgSrc = imgElement ? imgElement.src : null;
+                return { title, link };
             });
             // Add an extra program with empty title, link, and imgSrc
             extractedPrograms.push({
                 title: "none",
                 link: "none",
-                imgSrc: "none",
             });
             return extractedPrograms;
         });

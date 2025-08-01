@@ -1,3 +1,1 @@
-<template>
-    <ProgramList />
-</template>
+<template><ProgramList /></template>

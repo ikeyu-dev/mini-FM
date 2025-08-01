@@ -85,7 +85,7 @@ const noticeCount = ref<number>(0);
     </nav>
     <slot />
     <footer
-        class="footer bottom-0 sm:footer-horizontal bg-white text-neutral-900 p-10 fixed"
+        class="footer bottom-0 sm:footer-horizontal bg-white text-neutral-900 p-10"
     >
         <aside>
             <img

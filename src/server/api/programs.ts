@@ -18,10 +18,6 @@ export default defineEventHandler(async () => {
                 const link = linkElement ? linkElement.href : null;
                 return { title, link };
             });
-            extractedPrograms.push({
-                title: "none",
-                link: "none",
-            });
             return extractedPrograms;
         });
         return {

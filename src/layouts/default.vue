@@ -90,7 +90,7 @@ const noticeCount = ref<number>(0);
         <aside>
             <img
                 src="~/assets/img/logo.png"
-                alt="miniFM logo"
+                alt="FM-MiNIT logo"
                 class="w-30 md:w-40 lg:w-50"
             />
             <p>

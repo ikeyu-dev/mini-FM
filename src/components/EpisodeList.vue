@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import type { Programs } from "~/types/programs";
-const { data, error } = await useAsyncData("programs", async () => {
-    const response = await $fetch("/api/programs");
-    console.log("Fetched programs:", response);
-    return response as Programs;
+import type { Episodes } from "~/types/episode";
+const { data, error } = await useAsyncData("episodes", async () => {
+    const response = await $fetch("/api/episodes");
+    return response as Episodes;
 });
 
 if (data) {
-    if (data.value && data.value.programs) {
-        data.value.programs = data.value.programs
+    if (data.value && data.value.episodes) {
+        data.value.episodes = data.value.episodes
             .sort((a: any, b: any) => {
                 const extractEpisodeNumber = (title: string) => {
                     const match =
@@ -55,17 +54,17 @@ onUnmounted(() => {
         id="episodes"
     >
         <div
-            v-if="!data?.programs"
+            v-if="!data?.episodes"
             class="flex justify-center items-center"
         >
             <span class="loading loading-dots loading-xl"></span>
         </div>
         <div
             class="carousel carousel-horizontal carousel-center rounded-box"
-            v-if="!error && data?.programs"
+            v-if="!error && data?.episodes"
         >
             <div
-                v-for="(program, index) in data.programs"
+                v-for="(program, index) in data.episodes"
                 :key="index"
                 class="carousel-item bg-base-100 h-72 w-full md:w-1/2"
                 :data-index="index"

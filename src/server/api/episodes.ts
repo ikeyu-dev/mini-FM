@@ -10,18 +10,18 @@ export default defineEventHandler(async () => {
         const config = useRuntimeConfig();
         await page.goto(config.public.All_PROGRAM_URL);
 
-        const programs = await page.$$eval(".a3lLHc", (elements) => {
-            const extractedPrograms = elements.map((element) => {
+        const episodes = await page.$$eval(".a3lLHc", (elements) => {
+            const extractedEpisodes = elements.map((element) => {
                 const titleElement = element.querySelector('[jsname="r4nke"]');
                 const linkElement = element.querySelector("a");
                 const title = titleElement ? titleElement.textContent : null;
                 const link = linkElement ? linkElement.href : null;
                 return { title, link };
             });
-            return extractedPrograms;
+            return extractedEpisodes;
         });
         return {
-            programs: programs,
+            episodes: episodes,
         };
     } catch (error) {
         console.error("スクレイピング処理でエラーが発生:", error);

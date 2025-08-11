@@ -51,7 +51,7 @@ onUnmounted(() => {
 
 <template>
     <section
-        class="card card-body m-5 p-0 md:p-20"
+        class="card card-body m-5 p-0"
         id="episodes"
     >
         <div

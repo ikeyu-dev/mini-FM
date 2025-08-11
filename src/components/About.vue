@@ -26,9 +26,9 @@
                     主な活動内容としまして、毎週火曜日放送のラジオ収録（大型休暇を除く）、イベント時の校内放送にて、上記理念の実現に向け活動しています。
                 </p>
             </div>
-            <div class="card-actions justify-end">
+            <nuxt-link class="card-actions justify-end" to="#episodes">
                 <button class="btn btn-primary">Watch</button>
-            </div>
+            </nuxt-link>
         </div>
     </div>
 </template>

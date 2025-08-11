@@ -1,1 +1,3 @@
-<template><ProgramList /></template>
+<template>
+    <section><EpisodeList /><About /></section>
+</template>

@@ -49,10 +49,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section
-        class="card card-body m-5 p-0"
-        id="episodes"
-    >
+    <section class="card card-body m-5 p-0">
         <div
             v-if="!data?.episodes"
             class="flex justify-center items-center"

@@ -46,12 +46,6 @@
                     これらの活動を通じて、日工大生にとって有意義な情報を提供し、コミュニティの活性化を図っています。
                 </div>
             </div>
-            <nuxt-link
-                class="card-actions justify-end"
-                to="#episodes"
-            >
-                <button class="btn btn-primary">Listen</button>
-            </nuxt-link>
         </div>
     </div>
 </template>

@@ -50,7 +50,7 @@
                 class="card-actions justify-end"
                 to="#episodes"
             >
-                <button class="btn btn-primary">Watch</button>
+                <button class="btn btn-primary">Listen</button>
             </nuxt-link>
         </div>
     </div>

@@ -49,13 +49,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="card card-body m-5 p-0">
-        <div
-            v-if="!data?.episodes"
-            class="flex justify-center items-center"
-        >
-            <span class="loading loading-dots loading-xl"></span>
-        </div>
+    <section class="card md:card-body pt-10">
         <div
             class="carousel carousel-horizontal carousel-center rounded-box"
             v-if="!error && data?.episodes"
@@ -72,7 +66,7 @@ onUnmounted(() => {
                         'https://stand.fm/embed/episodes/' +
                         program.link.split('episodes/')[1].split('&')[0]
                     "
-                    class="w-full h-full px-3"
+                    class="w-full h-full px-2"
                     frameborder="0"
                     allowtransparency="true"
                     allow="encrypted-media"

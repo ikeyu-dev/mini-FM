@@ -32,9 +32,11 @@ if (data) {
 }
 
 const md_show = ref<boolean>(true);
+const windowWidth = ref<number>(0);
 
 const updateVisibility = () => {
     md_show.value = window.innerWidth >= 768;
+    windowWidth.value = window.innerWidth;
 };
 
 onMounted(async () => {
@@ -49,7 +51,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="card md:card-body pt-10">
+    <section class="card md:card-body animate-fade-in -10">
+        <section class="pb-5">
+            <div
+                class="card-title text-gray-800 flex justify-center items-center text-2xl py-3"
+            >
+                過去の放送回一覧
+            </div>
+        </section>
         <div
             class="carousel carousel-horizontal carousel-center rounded-box"
             v-if="!error && data?.episodes"
@@ -57,8 +66,11 @@ onUnmounted(() => {
             <div
                 v-for="(program, index) in data.episodes"
                 :key="index"
-                class="carousel-item bg-base-100 h-72 w-full md:w-1/2"
+                class="carousel-item bg-base-100 w-full md:w-1/2"
                 :data-index="index"
+                :style="
+                    windowWidth >= 1039 ? 'height: 185px;' : 'height: 222px;'
+                "
             >
                 <iframe
                     v-if="program.title !== 'none'"

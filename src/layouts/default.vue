@@ -71,8 +71,8 @@ const noticeCount = ref<number>(0);
                 >
                     <img
                         src="/assets/img/standfm_logo.png"
-                        class="h-10"
-                        alt="FM-MiNIT Stand.fm"
+                        class="h-10 bg-white rounded-full p-1 hover:opacity-80 transition-opacity duration-300"
+                        alt="Stand.fm"
                     />
                 </a>
             </div>

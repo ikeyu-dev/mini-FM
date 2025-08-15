@@ -35,7 +35,7 @@ onUnmounted(() => {
     </div>
     <div class="card shadow-lg rounded-lg p-6 animate-fade-in pt-32">
         <section class="pb-6">
-            <h1 class="text-5xl font-bold text-gray-50 text-center">
+            <h1 class="card-title text-4xl md:text-5xl md:text-center">
                 ABOUT FM-MiNIT
             </h1>
         </section>

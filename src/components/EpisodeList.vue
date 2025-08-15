@@ -86,5 +86,11 @@ onUnmounted(() => {
                 ></iframe>
             </div>
         </div>
+        <div
+            v-else
+            class="text-center text-white text-lg py-6"
+        >
+            取得に失敗しました．しばらくしてから再度お試しください．
+        </div>
     </section>
 </template>

@@ -78,7 +78,7 @@ onUnmounted(() => {
                         'https://stand.fm/embed/episodes/' +
                         program.link.split('episodes/')[1].split('&')[0]
                     "
-                    class="w-full h-full px-2"
+                    class="w-full h-full"
                     frameborder="0"
                     allowtransparency="true"
                     allow="encrypted-media"

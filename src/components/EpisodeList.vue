@@ -51,7 +51,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="card shadow-lg rounded-lg pt-6 pb-14 px-2 animate-fade-in">
+    <div class="card shadow-lg rounded-lg p-6 animate-fade-in py-32">
         <section class="pb-6">
             <div
                 class="card-title text-white flex justify-center items-center text-3xl font-semibold py-4"

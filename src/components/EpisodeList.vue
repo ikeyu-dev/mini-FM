@@ -53,11 +53,9 @@ onUnmounted(() => {
 <template>
     <div class="card shadow-lg rounded-lg p-6 animate-fade-in py-32">
         <section class="pb-6">
-            <div
-                class="card-title text-white flex justify-center items-center text-3xl font-semibold py-4"
-            >
-                過去の放送回一覧
-            </div>
+            <h1 class="card-title text-4xl md:text-5xl md:text-center">
+                ARCHIVE
+            </h1>
         </section>
         <div
             class="carousel carousel-horizontal carousel-center space-x-4"
@@ -92,5 +90,5 @@ onUnmounted(() => {
         >
             取得に失敗しました．しばらくしてから再度お試しください．
         </div>
-    </section>
+    </div>
 </template>

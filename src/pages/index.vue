@@ -1,3 +1,6 @@
 <template>
-    <section><EpisodeList /><About /></section>
+    <section class="bg-gradient-blue">
+        <About />
+        <EpisodeList />
+    </section>
 </template>

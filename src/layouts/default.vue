@@ -3,93 +3,29 @@ const noticeCount = ref<number>(0);
 </script>
 
 <template>
-    <nav class="navbar bg-base-100 shadow-sm top-0 sticky z-50">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <div
-                    tabindex="0"
-                    role="button"
-                    class="btn btn-ghost btn-circle"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h7"
-                        />
-                    </svg>
-                </div>
-                <ul
-                    tabindex="0"
-                    class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-                >
-                    <li><nuxt-link to="/">ホーム</nuxt-link></li>
-                    <li><nuxt-link to="/">お知らせ</nuxt-link></li>
-                    <li><nuxt-link to="/">リンク</nuxt-link></li>
-                </ul>
-            </div>
-        </div>
-        <div class="navbar-center">
+    <nav class="navbar bg-gradient-blue top-0 sticky z-50 opacity-90">
+        <div class="navbar-start pl-2">
             <img
-                src="~/assets/img/logo.png"
+                src="~/assets/img/logo_navbar.png"
                 alt="miniFM logo"
-                class="w-30 md:w-40 lg:w-50"
+                class="w-30 md:w-40 lg:w-50 opacity-100"
             />
         </div>
         <div class="navbar-end">
-            <button class="btn btn-ghost btn-circle mx-0.5">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                </svg>
-            </button>
-            <button class="btn btn-ghost btn-circle mx-0.5">
-                <div class="indicator">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                        />
-                    </svg>
-                    <span class="badge badge-xs badge-primary indicator-item">
-                        {{ noticeCount }}
-                    </span>
-                </div>
+            <button
+                class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
+            >
+                お知らせ
             </button>
         </div>
     </nav>
     <slot />
     <footer
-        class="footer bottom-0 sm:footer-horizontal bg-white text-neutral-900 p-10"
+        class="footer bg-[#1e2437] bottom-0 sm:footer-horizontal text-gray-50 p-10 pt-20"
     >
         <aside>
             <img
-                src="~/assets/img/logo.png"
+                src="~/assets/img/logo_navbar.png"
                 alt="FM-MiNIT logo"
                 class="w-30 md:w-40 lg:w-50"
             />

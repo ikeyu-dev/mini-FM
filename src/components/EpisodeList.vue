@@ -51,22 +51,22 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="card md:card-body animate-fade-in -10">
-        <section class="pb-5">
+    <section class="card shadow-lg rounded-lg pt-6 pb-14 px-2 animate-fade-in">
+        <section class="pb-6">
             <div
-                class="card-title text-gray-800 flex justify-center items-center text-2xl py-3"
+                class="card-title text-white flex justify-center items-center text-3xl font-semibold py-4"
             >
                 過去の放送回一覧
             </div>
         </section>
         <div
-            class="carousel carousel-horizontal carousel-center rounded-box"
+            class="carousel carousel-horizontal carousel-center space-x-4"
             v-if="!error && data?.episodes"
         >
             <div
                 v-for="(program, index) in data.episodes"
                 :key="index"
-                class="carousel-item bg-base-100 w-full md:w-1/2"
+                class="carousel-item rounded-lg shadow-md w-full md:w-1/2 overflow-hidden"
                 :data-index="index"
                 :style="
                     windowWidth >= 1039 ? 'height: 185px;' : 'height: 222px;'

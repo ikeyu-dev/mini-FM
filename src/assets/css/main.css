@@ -27,6 +27,13 @@
         format("woff2");
 }
 
+@font-face {
+    font-family: "Handel Gothic D Bold";
+    font-style: normal;
+    src: url("../font/Handel_Gothic_D_Bold/HandelGothicDBold.ttf")
+        format("woff2");
+}
+
 .bg-gradient-blue {
     background-image: linear-gradient(90deg, #020a25, #151e34);
 }

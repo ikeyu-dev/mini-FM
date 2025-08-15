@@ -27,9 +27,8 @@
         format("woff2");
 }
 
-.section-title {
-    font-family: "M PLUS Rounded 1c";
-    color: rgb(32, 32, 32);
+.bg-gradient-blue {
+    background-image: linear-gradient(90deg, #020a25, #151e34);
 }
 
 @keyframes fade-in {

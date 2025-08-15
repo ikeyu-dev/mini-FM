@@ -30,8 +30,10 @@
 @font-face {
     font-family: "Handel Gothic D Bold";
     font-style: normal;
-    src: url("../font/Handel_Gothic_D_Bold/HandelGothicDBold.ttf")
-        format("woff2");
+    font-weight: 700;
+    font-display: swap;
+    src: url("../font/Handel_Gothic_D_Bold/Handel-Gothic-D-Bold.otf")
+        format("opentype");
 }
 
 .bg-gradient-blue {

@@ -39,9 +39,9 @@ onUnmounted(() => {
                 ABOUT FM-MiNIT
             </h1>
         </section>
-        <div class="space-y-8">
+        <div class="space-y-8 p-2">
             <section>
-                <div class="card shadow-md rounded-lg p-6">
+                <div class="card shadow-md rounded-lg">
                     <h2 class="text-xl font-semibold text-gray-50 mb-4">
                         FM-MiNITとは？
                     </h2>
@@ -59,7 +59,7 @@ onUnmounted(() => {
                 </div>
             </section>
             <section>
-                <div class="card shadow-md rounded-lg p-6">
+                <div class="card shadow-md rounded-lg">
                     <h2 class="text-xl font-semibold text-gray-50 mb-4">
                         活動方針
                     </h2>
@@ -74,7 +74,7 @@ onUnmounted(() => {
                 </div>
             </section>
             <section>
-                <div class="card shadow-md rounded-lg p-6">
+                <div class="card shadow-md rounded-lg">
                     <h2 class="text-xl font-semibold text-gray-50 mb-4">
                         主な活動内容
                     </h2>

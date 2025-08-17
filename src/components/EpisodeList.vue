@@ -67,7 +67,7 @@ onUnmounted(() => {
                 class="carousel-item rounded-lg shadow-md w-full md:w-1/2 overflow-hidden"
                 :data-index="index"
                 :style="
-                    windowWidth >= 1039 ? 'height: 185px;' : 'height: 222px;'
+                    windowWidth >= 1054 ? 'height: 185px;' : 'height: 222px;'
                 "
             >
                 <iframe

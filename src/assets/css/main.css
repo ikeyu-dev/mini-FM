@@ -60,3 +60,35 @@ h1.card-title {
 .animate-fade-in {
     animation: fade-in 1.3s ease-in-out forwards;
 }
+
+@keyframes left-angle-opacity-pulse {
+    0% {
+        fill: #ffffff;
+    }
+    50% {
+        fill: #192549;
+    }
+    100% {
+        fill: #ffffff;
+    }
+}
+
+.left-angle-opacity-animation {
+    animation: left-angle-opacity-pulse 3s infinite ease-in-out;
+}
+
+@keyframes right-angle-opacity-pulse {
+    0% {
+        fill: #ffffff;
+    }
+    50% {
+        fill: #323d5f;
+    }
+    100% {
+        fill: #ffffff;
+    }
+}
+
+.right-angle-opacity-animation {
+    animation: right-angle-opacity-pulse 3s infinite ease-in-out;
+}

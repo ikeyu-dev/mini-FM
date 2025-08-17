@@ -21,7 +21,7 @@ const noticeCount = ref<number>(0);
     </nav>
     <slot />
     <footer
-        class="footer bg-[#1e2437] bottom-0 sm:footer-horizontal text-gray-50 p-10 pt-20"
+        class="footer bg-[#1e2437] bottom-0 sm:footer-horizontal text-gray-50 p-14"
     >
         <aside>
             <img

@@ -76,6 +76,9 @@ h1.card-title {
 .left-angle-opacity-animation {
     animation: left-angle-opacity-pulse 3s infinite ease-in-out;
 }
+:hover.left-angle-opacity-animation {
+    transform: scale(1.1);
+}
 
 @keyframes right-angle-opacity-pulse {
     0% {
@@ -91,4 +94,7 @@ h1.card-title {
 
 .right-angle-opacity-animation {
     animation: right-angle-opacity-pulse 3s infinite ease-in-out;
+}
+:hover.right-angle-opacity-animation {
+    transform: scale(1.1);
 }

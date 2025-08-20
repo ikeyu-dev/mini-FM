@@ -31,14 +31,6 @@
 //     }
 // }
 
-const md_show = ref<boolean>(true);
-const windowWidth = ref<number>(0);
-
-const updateVisibility = () => {
-    md_show.value = window.innerWidth >= 768;
-    windowWidth.value = window.innerWidth;
-};
-
 const allEpisodesId = [
     { id: "687f8f79732743876e88f727", index: 34 },
     { id: "6877c6bab8e4b65cd57415e8", index: 33 },
@@ -78,6 +70,14 @@ const allEpisodesId = [
     { id: "647ea683fcb86fe1043711ba", index: 1 },
     { id: "64689dfc4321bc0322b3a8f7", index: 0 },
 ];
+
+const md_show = ref<boolean>(true);
+const windowWidth = ref<number>(0);
+
+const updateVisibility = () => {
+    md_show.value = window.innerWidth >= 768;
+    windowWidth.value = window.innerWidth;
+};
 
 onMounted(async () => {
     window.addEventListener("resize", updateVisibility);

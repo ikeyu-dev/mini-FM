@@ -1,10 +1,3 @@
-<script setup lang="ts">
-const navigateButtonText = computed(() => {
-    const route = useRoute();
-    return route.path === "/letterform" ? "ホーム" : "お便り募集フォーム";
-});
-</script>
-
 <template>
     <nav class="navbar bg-gradient-blue top-0 sticky z-50 opacity-95">
         <div class="navbar-start pl-2">

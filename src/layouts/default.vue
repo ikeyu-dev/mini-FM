@@ -3,7 +3,7 @@ const noticeCount = ref<number>(0);
 </script>
 
 <template>
-    <nav class="navbar bg-gradient-blue top-0 sticky z-50 opacity-90">
+    <nav class="navbar bg-gradient-blue top-0 sticky z-50 opacity-95">
         <div class="navbar-start pl-2">
             <img
                 src="~/assets/img/logo_navbar.png"

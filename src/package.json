@@ -12,7 +12,6 @@
     "dependencies": {
         "@tailwindcss/vite": "^4.1.11",
         "nuxt": "^3.17.6",
-        "pinia-plugin-persistedstate": "^4.4.1",
         "puppeteer": "^24.14.0",
         "tailwindcss": "^4.1.11",
         "vue": "^3.5.17",

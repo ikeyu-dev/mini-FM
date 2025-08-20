@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import type { Episodes } from "~/types/episode";
-const { data, error } = await useAsyncData("episodes", async () => {
-    const response = await $fetch("/api/episodes");
-    return response as Episodes;
-});
+// import type { Episodes } from "~/types/episode";
+// const { data, error } = await useAsyncData("episodes", async () => {
+//     const response = await $fetch("/api/episodes");
+//     return response as Episodes;
+// });
 
-if (data) {
-    if (data.value && data.value.episodes) {
-        data.value.episodes = data.value.episodes
-            .sort((a: any, b: any) => {
-                const extractEpisodeNumber = (title: string) => {
-                    const match =
-                        title.match(/第(\d+)回/) ||
-                        title.match(/第(\d+\.\d+)回/);
-                    if (!match) {
-                        return 0;
-                    } else {
-                        return parseFloat(match[1]);
-                    }
-                };
-                return (
-                    extractEpisodeNumber(b.title) -
-                    extractEpisodeNumber(a.title)
-                );
-            })
-            .filter(
-                (program) =>
-                    program.link !== "https://forms.gle/mQ7DpVwUqRtKnbcG6"
-            );
-    }
-}
+// if (data) {
+//     if (data.value && data.value.episodes) {
+//         data.value.episodes = data.value.episodes
+//             .sort((a: any, b: any) => {
+//                 const extractEpisodeNumber = (title: string) => {
+//                     const match =
+//                         title.match(/第(\d+)回/) ||
+//                         title.match(/第(\d+\.\d+)回/);
+//                     if (!match) {
+//                         return 0;
+//                     } else {
+//                         return parseFloat(match[1]);
+//                     }
+//                 };
+//                 return (
+//                     extractEpisodeNumber(b.title) -
+//                     extractEpisodeNumber(a.title)
+//                 );
+//             })
+//             .filter(
+//                 (program) =>
+//                     program.link !== "https://forms.gle/mQ7DpVwUqRtKnbcG6"
+//             );
+//     }
+// }
 
 const md_show = ref<boolean>(true);
 const windowWidth = ref<number>(0);
@@ -97,10 +97,7 @@ onUnmounted(() => {
                 ARCHIVE
             </h1>
         </section>
-        <div
-            class="carousel w-full"
-            v-if="!error && data?.episodes"
-        >
+        <div class="carousel w-full">
             <div
                 v-for="episode in allEpisodesId"
                 :id="'episode' + episode.index"
@@ -157,10 +154,7 @@ onUnmounted(() => {
                 </div>
             </div>
         </div>
-        <div
-            v-else
-            class="text-center text-white text-lg py-6"
-        >
+        <div class="text-center text-white text-lg py-6">
             取得に失敗しました．しばらくしてから再度お試しください．
         </div>
     </div>

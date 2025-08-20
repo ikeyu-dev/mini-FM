@@ -154,8 +154,5 @@ onUnmounted(() => {
                 </div>
             </div>
         </div>
-        <div class="text-center text-white text-lg py-6">
-            取得に失敗しました．しばらくしてから再度お試しください．
-        </div>
     </div>
 </template>

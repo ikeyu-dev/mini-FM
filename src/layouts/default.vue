@@ -15,7 +15,7 @@ const noticeCount = ref<number>(0);
             <button
                 class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
             >
-                お知らせ
+                お便り募集フォーム
             </button>
         </div>
     </nav>

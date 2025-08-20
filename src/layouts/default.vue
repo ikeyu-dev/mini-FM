@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const noticeCount = ref<number>(0);
+const navigateButtonText = computed(() => {
+    const route = useRoute();
+    return route.path === "/letterform" ? "ホーム" : "お便り募集フォーム";
+});
 </script>
 
 <template>
@@ -13,12 +16,12 @@ const noticeCount = ref<number>(0);
         </div>
         <nuxt-link
             class="navbar-end"
-            to="/letterform"
+            :to="useRoute().path === '/letterform' ? '/' : '/letterform'"
         >
             <button
                 class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
             >
-                お便り募集フォーム
+                {{ navigateButtonText }}
             </button>
         </nuxt-link>
     </nav>

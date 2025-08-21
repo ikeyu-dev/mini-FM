@@ -8,6 +8,7 @@
             />
         </div>
         <section class="navbar-end">
+            <!-- TODO: md以上ではテキスト表示を行う(レスポンシブ対応) -->
             <ul class="menu menu-horizontal bg-base-200 rounded-box">
                 <li>
                     <nuxt-link

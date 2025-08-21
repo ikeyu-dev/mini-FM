@@ -1,36 +1,4 @@
 <script setup lang="ts">
-// import type { Episodes } from "~/types/episode";
-// const { data, error } = await useAsyncData("episodes", async () => {
-//     const response = await $fetch("/api/episodes");
-//     return response as Episodes;
-// });
-
-// if (data) {
-//     if (data.value && data.value.episodes) {
-//         data.value.episodes = data.value.episodes
-//             .sort((a: any, b: any) => {
-//                 const extractEpisodeNumber = (title: string) => {
-//                     const match =
-//                         title.match(/第(\d+)回/) ||
-//                         title.match(/第(\d+\.\d+)回/);
-//                     if (!match) {
-//                         return 0;
-//                     } else {
-//                         return parseFloat(match[1]);
-//                     }
-//                 };
-//                 return (
-//                     extractEpisodeNumber(b.title) -
-//                     extractEpisodeNumber(a.title)
-//                 );
-//             })
-//             .filter(
-//                 (program) =>
-//                     program.link !== "https://forms.gle/mQ7DpVwUqRtKnbcG6"
-//             );
-//     }
-// }
-
 const allEpisodesId = [
     { id: "687f8f79732743876e88f727", index: 34 },
     { id: "6877c6bab8e4b65cd57415e8", index: 33 },

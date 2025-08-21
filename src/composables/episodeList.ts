@@ -1,4 +1,4 @@
-import { type Episodes } from "@/types/episodeList";
+import { type Episodes } from "~/types/episode";
 
 export const episodesId: Episodes[] = [
     { id: "687f8f79732743876e88f727", index: 34 },

@@ -23,7 +23,7 @@
                     </svg>
                 </button>
             </nuxt-link>
-            <nuxt-link to="/letterform">
+            <nuxt-link to="/letter">
                 <button
                     class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
                 >
@@ -38,7 +38,7 @@
                     </svg>
                 </button>
             </nuxt-link>
-            <nuxt-link to="/allEpisodes">
+            <nuxt-link to="/episodes">
                 <button
                     class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
                 >

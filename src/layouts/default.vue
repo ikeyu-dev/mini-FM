@@ -10,7 +10,7 @@
         <section class="navbar-end gap-2 md:gap-4">
             <nuxt-link to="/">
                 <button
-                    class="py-2.5 px-5 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
+                    class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@
             </nuxt-link>
             <nuxt-link to="/letterform">
                 <button
-                    class="py-2.5 px-5 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
+                    class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +38,24 @@
                     </svg>
                 </button>
             </nuxt-link>
+            <nuxt-link to="/allEpisodes">
+                <button
+                    class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        class="h-4 md:h-6 w-4 md:w-6"
+                    >
+                        <path
+                            d="M320 112C434.9 112 528 205.1 528 320C528 434.9 434.9 528 320 528C205.1 528 112 434.9 112 320C112 205.1 205.1 112 320 112zM320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM276.5 211.5C269.1 207 259.8 206.8 252.2 211C244.6 215.2 240 223.3 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4zM362 320L288 365.2L288 274.8L362 320z"
+                        />
+                    </svg>
+                </button>
+            </nuxt-link>
             <nuxt-link to="/#">
                 <button
-                    class="py-2.5 px-5 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
+                    class="px-4 py-2 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 hover:scale-95 transition-transform duration-200 ease-in-out"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

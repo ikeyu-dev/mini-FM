@@ -1,3 +1,23 @@
+<script setup lang="ts">
+const md_show = ref<boolean>(true);
+const windowWidth = ref<number>(0);
+
+const updateVisibility = () => {
+    md_show.value = window.innerWidth >= 768;
+    windowWidth.value = window.innerWidth;
+};
+
+onMounted(async () => {
+    window.addEventListener("resize", updateVisibility);
+    updateVisibility();
+});
+
+onUnmounted(() => {
+    window.removeEventListener("resize", updateVisibility);
+    updateVisibility();
+});
+</script>
+
 <template>
     <nav class="navbar bg-gradient-blue top-0 sticky z-50 opacity-95">
         <div class="navbar-start pl-2">

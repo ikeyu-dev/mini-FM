@@ -28,7 +28,6 @@ onUnmounted(() => {
             />
         </div>
         <section class="navbar-end">
-            <!-- TODO: md以上ではテキスト表示を行う(レスポンシブ対応) -->
             <ul
                 class="menu menu-horizontal rounded-box p-0 md:gap-4 fill-white text-white font-bold"
             >

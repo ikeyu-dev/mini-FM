@@ -106,7 +106,7 @@ onUnmounted(() => {
                 </li>
                 <li>
                     <nuxt-link
-                        to="#"
+                        to="/notice"
                         :class="{ 'tooltip tooltip-bottom': !md_show }"
                         data-tip="お知らせ"
                     >
